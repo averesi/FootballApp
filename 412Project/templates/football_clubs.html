@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Clubs</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Football Clubs</h1>
+
+    <!-- Button to redirect to players.html -->
+    <a href="{{ url_for('players') }}" class="redirect-button">
+        <button>Search Club Players</button>
+    </a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Club Name</th>
+                <th>Established Year</th>
+                <th>League</th>
+                <th>City & Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for club in football_club_data %}
+                <tr>
+                    <td>{{ club[0] }}</td>
+                    <td>{{ club[1] }}</td>
+                    <td>{{ club[2] }}</td>
+                    <td>{{ club[3] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

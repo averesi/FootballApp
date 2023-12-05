@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 72px; /* Set your desired font size */
+        }
+
+        button {
+            font-size: 36px; /* Set your desired font size */
+            padding: 10px 20px; /* Set padding for the buttons */
+            margin: 10px; /* Add margin to separate the buttons */
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Football App</h1>
+    <button onclick="window.location.href='{{ url_for('football_clubs') }}'">Clubs</button>
+    <button onclick="window.location.href='{{ url_for('players') }}'">Club Players</button>
+    <button onclick="window.location.href='{{ url_for('national_team_players') }}'">National Team Players</button>
+    <button onclick="window.location.href='{{ url_for('trophies') }}'">Trophies</button>
+</body>
+</html>

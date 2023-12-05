@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trophies</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trophies</h1>
+
+    <form method="post">
+        <div class="search-box">
+            <label for="trophy_name">Search by trophy Name:</label>
+            <input type="text" id="trophy_name" name="trophy_name">
+        </div>
+        <div class="search-box">
+            <label for="trophy_year">Search by Year:</label>
+            <input type="text" id="trophy_year" name="trophy_year">
+        </div>
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Table displaying trophy data -->
+    <table>
+        <thead>
+            <tr>
+                <th>Trophy Name</th>
+                <th>Won</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for trophy in trophies_data %}
+                <tr>
+                    <td>{{ trophy[0] }}</td>
+                    <td>{{ trophy[1] }}</td>
+                    <td>{{ trophy[2] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
